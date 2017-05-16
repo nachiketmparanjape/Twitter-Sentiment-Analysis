@@ -1,0 +1,220 @@
+{
+  "axes": [
+    {
+      "scale": "x",
+      "type": "x"
+    },
+    {
+      "scale": "y",
+      "type": "y"
+    }
+  ],
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {
+          "col": "data",
+          "idx": "#IPL2017",
+          "val": 324
+        },
+        {
+          "col": "data",
+          "idx": "#IPL",
+          "val": 152
+        },
+        {
+          "col": "data",
+          "idx": "#KXIPvKKR",
+          "val": 92
+        },
+        {
+          "col": "data",
+          "idx": "#VIVOIPL",
+          "val": 54
+        },
+        {
+          "col": "data",
+          "idx": "#GLvDD",
+          "val": 48
+        },
+        {
+          "col": "data",
+          "idx": "#ipl2017",
+          "val": 30
+        },
+        {
+          "col": "data",
+          "idx": "#ipl",
+          "val": 26
+        },
+        {
+          "col": "data",
+          "idx": "#KKRvKXIP",
+          "val": 24
+        },
+        {
+          "col": "data",
+          "idx": "#Indianpremierleague",
+          "val": 22
+        },
+        {
+          "col": "data",
+          "idx": "#IPLTweets",
+          "val": 22
+        },
+        {
+          "col": "data",
+          "idx": "#IPL10",
+          "val": 16
+        },
+        {
+          "col": "data",
+          "idx": "#PreityZinta",
+          "val": 16
+        },
+        {
+          "col": "data",
+          "idx": "#JuhiChawla",
+          "val": 16
+        },
+        {
+          "col": "data",
+          "idx": "#MasalaCommentary",
+          "val": 16
+        },
+        {
+          "col": "data",
+          "idx": "#NewPics",
+          "val": 16
+        },
+        {
+          "col": "data",
+          "idx": "#MotoRPS",
+          "val": 12
+        },
+        {
+          "col": "data",
+          "idx": "#VIVOIPL2017",
+          "val": 10
+        },
+        {
+          "col": "data",
+          "idx": "#breaking",
+          "val": 10
+        },
+        {
+          "col": "data",
+          "idx": "#sscricket",
+          "val": 10
+        },
+        {
+          "col": "data",
+          "idx": "#vivoipl",
+          "val": 10
+        }
+      ]
+    },
+    {
+      "name": "stats",
+      "source": "table",
+      "transform": [
+        {
+          "keys": [
+            "data.idx"
+          ],
+          "type": "facet"
+        },
+        {
+          "type": "stats",
+          "value": "data.val"
+        }
+      ]
+    }
+  ],
+  "height": 500,
+  "legends": [],
+  "marks": [
+    {
+      "from": {
+        "data": "table",
+        "transform": [
+          {
+            "keys": [
+              "data.col"
+            ],
+            "type": "facet"
+          },
+          {
+            "height": "data.val",
+            "point": "data.idx",
+            "type": "stack"
+          }
+        ]
+      },
+      "marks": [
+        {
+          "properties": {
+            "enter": {
+              "fill": {
+                "field": "data.col",
+                "scale": "color"
+              },
+              "width": {
+                "band": true,
+                "offset": -1,
+                "scale": "x"
+              },
+              "x": {
+                "field": "data.idx",
+                "scale": "x"
+              },
+              "y": {
+                "field": "y",
+                "scale": "y"
+              },
+              "y2": {
+                "field": "y2",
+                "scale": "y"
+              }
+            }
+          },
+          "type": "rect"
+        }
+      ],
+      "type": "group"
+    }
+  ],
+  "padding": "auto",
+  "scales": [
+    {
+      "domain": {
+        "data": "table",
+        "field": "data.idx"
+      },
+      "name": "x",
+      "range": "width",
+      "type": "ordinal",
+      "zero": false
+    },
+    {
+      "domain": {
+        "data": "stats",
+        "field": "sum"
+      },
+      "name": "y",
+      "nice": true,
+      "range": "height"
+    },
+    {
+      "domain": {
+        "data": "table",
+        "field": "data.col"
+      },
+      "name": "color",
+      "range": "category20",
+      "type": "ordinal"
+    }
+  ],
+  "width": 960
+}
